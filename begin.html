@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function myFunction()
+    {
+        document.getElementById("demo").innerHTML="WOW! this content is changed by scripts at html header";
+    }
+    </script>
+</head>
+<body>
+
+<script>
+    //window.alert("My first JavaScript");
+</script>
+
+<!--Directly write content to html while loading-->
+<script>
+    document.write(Date())
+    document.write("<h1>This is a title</h1>")
+    document.write("<p>This is a paragraph</p>")
+</script>
+
+<script>
+    var info = {firstName:"Shang", lastName:"Li", age:27, eyeColor:"grey"}
+    document.write('Ahoy! ' + info.lastName + ', ' + info.firstName)
+</script>
+
+
+<script>
+    function showResult(type) {
+        var a_val = Number(document.getElementById("a").value)
+        var b_val = Number(document.getElementById("b").value)
+        switch (type) {
+            case 1:
+                var result = a_val + b_val
+                break
+            case 2:
+                var result = a_val - b_val
+                break
+            case 3:
+                var result = a_val * b_val
+                break
+            case 4:
+                var result = (a_val / b_val).toFixed(3)
+                break
+        }
+        document.getElementById("cal_result").innerHTML= result
+    }
+</script>
+
+<script>
+    function showResult2(){
+        var c_val = document.getElementById("c").value
+        var result = c_val
+        document.getElementById("cal_result2").innerHTML= result
+    }
+</script>
+
+<br><br>
+<h3>Too Simple Calculator</h3>
+<form>
+    First number:<br>
+    <input type="text" name="a" value="" id="a">
+    <br>
+    Second number:<br>
+    <input type="text" name="b" value="" id="b">
+</form> 
+
+<p id="cal_result">showing calculation result</p>
+<button type="button" onclick="showResult(1)">Add!</button>
+<button type="button" onclick="showResult(2)">Minus!</button>
+<button type="button" onclick="showResult(3)">Multiply!</button>
+<button type="button" onclick="showResult(4)">Divide!</button>
+
+
+<br><br>
+<br><br>
+<h3>Too Simple Calculator2 unfinished</h3>
+<form>
+    Your expression:<br>
+    <input type="text" name="expr" value="" id="c">
+</form> 
+<p id="cal_result2">showing calculation result</p>
+<button type="button" onclick="showResult2()">Copy!</button>
+
+<br><br>
+<p id="demo">a paragraph</p>
+<button type="button" onclick="myFunction()">click to change the content above</button>
+<button type="button" onclick="myFunction2()">click to change the content above</button>
+
+<script>
+    function myFunction2()
+    {
+        document.getElementById("demo").innerHTML="WOW! this content is changed by scripts at html body";
+    }
+</script>
+
+</body>
+</html>
